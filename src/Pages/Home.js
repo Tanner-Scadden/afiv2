@@ -78,52 +78,44 @@ const Home = (props) => {
         <div className="contact-container">
           <div className="contact">
             <h3 className="section-title">Contact Us</h3>
-            <div className="form-container">
-              <form method="post" name="contact" action="/success" data-netlify="true" netlify-honeypot="bot-field">
-                <input
-                  type="hidden"
-                  name="form-name"
-                  value="contact"
-                />
-                <div className="field half first">
-                  <TextField
-                    required
-                    id="outlined-required"
-                    label="Email"
-                    margin="normal"
-                    variant="outlined"
-                    fullWidth={true}
-                  />
-                </div>
-                <div className="field half">
-                  <TextField
-                    required
-                    id="outlined-required"
-                    label="Name"
-                    margin="normal"
-                    variant="outlined"
-                    fullWidth={true}
-                  />
-                </div>
-                <div className="field">
-                  <TextField
-                    required
-                    id="outlined-required"
-                    label="Message"
-                    margin="normal"
-                    variant="outlined"
-                    multiline={true}
-                    rows={3}
-                    rowsMax={5}
-                    fullWidth={true}
-                  />
-                </div>
-                <ul className="actions">
-                  <li><button type="reset" value="Reset" className="reset">Reset</button></li>
-                  <li><button type="submit" value="Send Message" className="submit">Send Message</button></li>
-                </ul>
-              </form>
-            </div>
+            <form method="post" name="contact" action="/success" data-netlify="true" netlify-honeypot="bot-field">
+              <input
+                type="hidden"
+                name="form-name"
+                value="contact"
+              />
+              <TextField
+                required
+                id="outlined-required"
+                label="Email"
+                margin="normal"
+                variant="outlined"
+                fullWidth={true}
+              />
+              <TextField
+                required
+                id="outlined-required"
+                label="Name"
+                margin="normal"
+                variant="outlined"
+                fullWidth={true}
+              />
+              <TextField
+                required
+                id="outlined-required"
+                label="Message"
+                margin="normal"
+                variant="outlined"
+                multiline={true}
+                rows={3}
+                rowsMax={5}
+                fullWidth={true}
+              />
+              <ul className="actions">
+                <li><button type="reset" value="Reset" className="reset">Reset</button></li>
+                <li><button type="submit" value="Send Message" className="submit">Send Message</button></li>
+              </ul>
+            </form>
           </div>
         </div>
 
