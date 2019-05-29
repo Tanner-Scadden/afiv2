@@ -79,7 +79,7 @@ const Home = (props) => {
         <div className="contact-container">
           <div className="contact">
             <h3 className="section-title">Contact Us</h3>
-            <form method="post" name="contact" action="/success" data-netlify="true" netlify-honeypot="bot-field">
+            <form method="POST" name="contact" data-netlify="true">
               <input
                 type="hidden"
                 name="form-name"
