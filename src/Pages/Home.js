@@ -79,7 +79,7 @@ const Home = (props) => {
         <div className="contact-container">
           <div className="contact">
             <h3 className="section-title">Contact Us</h3>
-            <form method="POST" name="contact" data-netlify="true">
+            <form method="POST" netlify name="contact" data-netlify="true" netlify-honeypot="bot-field">
               <input
                 type="hidden"
                 name="form-name"
@@ -92,6 +92,7 @@ const Home = (props) => {
                 margin="normal"
                 variant="outlined"
                 fullWidth={true}
+                name="Email"
               />
               <TextField
                 required
@@ -100,6 +101,7 @@ const Home = (props) => {
                 margin="normal"
                 variant="outlined"
                 fullWidth={true}
+                name="Name"
               />
               <TextField
                 required
@@ -111,6 +113,7 @@ const Home = (props) => {
                 rows={3}
                 rowsMax={5}
                 fullWidth={true}
+                name="message"
               />
               <ul className="actions">
                 <li><button type="reset" value="Reset" className="reset">Reset</button></li>
