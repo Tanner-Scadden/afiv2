@@ -1,4 +1,5 @@
 import React from 'react';
+import NetlifyForm from 'react-netlify-form'
 
 
 // Components
@@ -79,53 +80,59 @@ const Home = (props) => {
         <div className="contact-container">
           <div className="contact">
             <h3 className="section-title">Contact Us</h3>
-            <form method="POST" netlify name="contact" data-netlify="true" netlify-honeypot="bot-field">
-              <input
-                type="hidden"
-                name="form-name"
-                value="contact"
-              />
-              <p>
-                <TextField
-                  required
-                  id="outlined-required"
-                  label="Email"
-                  margin="normal"
-                  variant="outlined"
-                  fullWidth={true}
-                  name="Email"
-                />
-              </p>
-              <p>
-                <TextField
-                  required
-                  id="outlined-required"
-                  label="Name"
-                  margin="normal"
-                  variant="outlined"
-                  fullWidth={true}
-                  name="Name"
-                />
-              </p>
-              <p>
-                <TextField
-                  required
-                  id="outlined-required"
-                  label="Message"
-                  margin="normal"
-                  variant="outlined"
-                  multiline={true}
-                  rows={3}
-                  rowsMax={5}
-                  fullWidth={true}
-                  name="message"
-                />
-              </p>
-              <ul className="actions">
-                <li><button type="reset" value="Reset" className="reset">Reset</button></li>
-                <li><button type="submit" value="Send Message" className="submit">Send Message</button></li>
-              </ul>
-            </form>
+            <NetlifyForm name="contact">
+              {({ loading, error, success }) => (
+                <div>
+                  {loading &&
+                    <div>Loading...</div>
+                  }
+                  {error &&
+                    <div>Your information was not sent. Please try again later.</div>
+                  }
+                  {success &&
+                    <div>Thank you for contacting us!</div>
+                  }
+                  {!loading && !success &&
+                    <div className="form">
+                      <TextField
+                        required
+                        id="outlined-required"
+                        label="Email"
+                        margin="normal"
+                        variant="outlined"
+                        fullWidth={true}
+                        name="Email"
+                      />
+                      <TextField
+                        required
+                        id="outlined-required"
+                        label="Name"
+                        margin="normal"
+                        variant="outlined"
+                        fullWidth={true}
+                        name="Name"
+                      />
+                      <TextField
+                        required
+                        id="outlined-required"
+                        label="Message"
+                        margin="normal"
+                        variant="outlined"
+                        multiline={true}
+                        rows={3}
+                        rowsMax={5}
+                        fullWidth={true}
+                        name="message"
+                      />
+                      <ul className="actions">
+                        <li><button type="reset" value="Reset" className="reset">Reset</button></li>
+                        <li><button type="submit" value="Send Message" className="submit">Send Message</button></li>
+                      </ul>
+                    </div>
+                  }
+                </div>
+              )}
+            </NetlifyForm>
           </div>
         </div>
 
