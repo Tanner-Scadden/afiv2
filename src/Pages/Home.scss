@@ -240,8 +240,7 @@ a {
   text-align: center;
   form {
     max-width: 400px;
-    margin: 2em auto;
-    margin-bottom: none;
+    margin: 2em auto !important;
     .actions {
       margin-top: 0.5em;
       display: flex;
