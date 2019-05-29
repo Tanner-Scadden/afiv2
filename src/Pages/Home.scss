@@ -14,7 +14,8 @@ a {
 
 .arrow {
   text-align: center;
-  margin: 30vh 0;
+  font-size: 1.2em;
+  margin: 20vh 0;
 }
 .bounce {
   -moz-animation: bounce 3s infinite;
@@ -166,6 +167,7 @@ a {
         font-size: 2.5em;
         text-transform: capitalize;
         text-align: center;
+        max-width: 345px;
       }
 
       .info {
@@ -284,7 +286,7 @@ a {
 
 @media only screen and (min-height: 700px) {
   .arrow {
-    margin: 37vh 0;
+    margin: 30vh 0;
   }
 }
 
@@ -298,6 +300,9 @@ a {
     .top {
       .banner {
         height: 5em;
+        .title {
+          max-width: none;
+        }
       }
     }
   }

@@ -3,6 +3,7 @@ import React from 'react';
 
 // Components
 import Header from '../Components/Header/Header';
+import Footer from '../Components/Footer/Footer';
 
 // Styling
 import './Home.scss';
@@ -120,6 +121,7 @@ const Home = (props) => {
         </div>
 
       </div>
+      <Footer />
     </div>
   )
 }
