@@ -94,6 +94,7 @@ const Home = (props) => {
                   }
                   {!loading && !success &&
                     <div className="form">
+                      <input type="hidden" name="form-name" value="contact" />
                       <TextField
                         required
                         id="outlined-required"
