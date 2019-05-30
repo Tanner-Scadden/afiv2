@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 
 
 // Components
@@ -16,9 +16,6 @@ import { TextField } from '@material-ui/core';
 // BRAND IMAGES //
 import NorthStar from '../Images/brands/NorthStar.png';
 import GenTec from '../Images/brands/GenTec.png';
-import LixX from '../Images/brands/LixX.png';
-import GenRock from '../Images/brands/GenRock.png';
-import Gen20 from '../Images/brands/Gen20.png';
 import SunMight from '../Images/brands/SunMight.jpg';
 import PlioGrip from '../Images/brands/PlioGrip.jpg';
 import Anest from '../Images/brands/Anest.jpg';
@@ -34,6 +31,14 @@ import car3 from '../Images/oldcar3.jpg';
 
 
 const Home = (props) => {
+
+  const productRef = useRef("products")
+
+  function scrollToProducts() {
+    const height = productRef.current.offsetTop - 50
+    window.scrollTo(0, height);
+  }
+
   return (
     <div>
       <Header />
@@ -46,21 +51,18 @@ const Home = (props) => {
               <span><i className="fas fa-phone"></i>(801) 990-7360</span>
               <span><i className="far fa-envelope"></i>info@afipaintsupply.com</span>
             </div>
-            <div className="arrow bounce">
+            <div className="arrow bounce" onClick={scrollToProducts}>
               <h4>See Our Products</h4>
               <i className="fa fa-arrow-down fa-2x"></i>
             </div>
           </div>
         </div>
 
-        <div className="products">
+        <div className="products" ref={productRef}>
           <h3 className="section-title">Product Lines</h3>
           <ul>
             <li><img src={NorthStar} alt="brand" /></li>
             <li><img src={GenTec} alt="brand" /></li>
-            <li><img src={LixX} alt="brand" /></li>
-            <li><img src={GenRock} alt="brand" /></li>
-            <li><img src={Gen20} alt="brand" /></li>
             <li><img src={SunMight} alt="brand" /></li>
             <li><img src={PlioGrip} alt="brand" /></li>
             <li><img src={Anest} alt="brand" /></li>
