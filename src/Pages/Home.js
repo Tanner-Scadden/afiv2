@@ -1,5 +1,4 @@
 import React from 'react';
-import NetlifyForm from 'react-netlify-form'
 
 
 // Components
@@ -44,12 +43,12 @@ const Home = (props) => {
           <div className="banner">
             <span className="title">WELCOME TO AFI</span>
             <div className="info">
-              <span><i class="fas fa-phone"></i>(801) 990-7360</span>
-              <span><i class="far fa-envelope"></i>info@afipaintsupply.com</span>
+              <span><i className="fas fa-phone"></i>(801) 990-7360</span>
+              <span><i className="far fa-envelope"></i>info@afipaintsupply.com</span>
             </div>
-            <div class="arrow bounce">
+            <div className="arrow bounce">
               <h4>See Our Products</h4>
-              <a class="fa fa-arrow-down fa-2x" href="#"></a>
+              <i className="fa fa-arrow-down fa-2x"></i>
             </div>
           </div>
         </div>
@@ -80,60 +79,58 @@ const Home = (props) => {
         <div className="contact-container">
           <div className="contact">
             <h3 className="section-title">Contact Us</h3>
-            <NetlifyForm name="contact">
-              {({ loading, error, success }) => (
-                <div>
-                  {loading &&
-                    <div>Loading...</div>
-                  }
-                  {error &&
-                    <div>Your information was not sent. Please try again later.</div>
-                  }
-                  {success &&
-                    <div>Thank you for contacting us!</div>
-                  }
-                  {!loading && !success &&
-                    <div className="form">
-                      <input type="hidden" name="form-name" value="contact" />
-                      <TextField
-                        required
-                        id="outlined-required"
-                        label="Email"
-                        margin="normal"
-                        variant="outlined"
-                        fullWidth={true}
-                        name="Email"
-                      />
-                      <TextField
-                        required
-                        id="outlined-required"
-                        label="Name"
-                        margin="normal"
-                        variant="outlined"
-                        fullWidth={true}
-                        name="Name"
-                      />
-                      <TextField
-                        required
-                        id="outlined-required"
-                        label="Message"
-                        margin="normal"
-                        variant="outlined"
-                        multiline={true}
-                        rows={3}
-                        rowsMax={5}
-                        fullWidth={true}
-                        name="message"
-                      />
-                      <ul className="actions">
-                        <li><button type="reset" value="Reset" className="reset">Reset</button></li>
-                        <li><button type="submit" value="Send Message" className="submit">Send Message</button></li>
-                      </ul>
-                    </div>
-                  }
-                </div>
-              )}
-            </NetlifyForm>
+            <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+              <input type="text" name="name" />
+              <input type="email" name="email" />
+              <textarea name="message"></textarea>
+            </form>
+            <form className="form" method="POST" netlify name="contact" data-netlify="true" netlify-honeypot="bot-field">
+              <input
+                type="hidden"
+                name="form-name"
+                value="contact"
+              />
+              <div>
+                <TextField
+                  required
+                  id="outlined-required"
+                  label="Email"
+                  margin="normal"
+                  variant="outlined"
+                  fullWidth={true}
+                  name="Email"
+                />
+              </div>
+              <div>
+                <TextField
+                  required
+                  id="outlined-required"
+                  label="Name"
+                  margin="normal"
+                  variant="outlined"
+                  fullWidth={true}
+                  name="Name"
+                />
+              </div>
+              <div>
+                <TextField
+                  required
+                  id="outlined-required"
+                  label="Message"
+                  margin="normal"
+                  variant="outlined"
+                  multiline={true}
+                  rows={3}
+                  rowsMax={5}
+                  fullWidth={true}
+                  name="message"
+                />
+              </div>
+              <ul className="actions">
+                <li><button type="reset" value="Reset" className="reset">Reset</button></li>
+                <li><button type="submit" value="Send Message" className="submit">Send Message</button></li>
+              </ul>
+            </form>
           </div>
         </div>
 

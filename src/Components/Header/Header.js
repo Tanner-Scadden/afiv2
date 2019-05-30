@@ -15,11 +15,6 @@ const Header = (props) => {
     };
   }, [display])
 
-
-  function displayMenu() {
-
-  }
-
   return (
     <header>
 
